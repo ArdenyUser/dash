@@ -1,17 +1,18 @@
-echo AWCONSOLE~env~>  
+echo AWCONSOLE-env: 
 read c
 	
 if [ $c -eq "OUTPUT" ] 
 then
   sleep 1
-  echo AWCONSOLE~env~>OUTPUT~>  
+  echo AWCONSOLE-env-:OUTPUT:
   read print
   echo $print
+  
 fi
 
 if [ $c -eq "EXECUTE" ] 
 then
-  echo AWCONSOLE~env~>EXECUTE~> 
+  echo AWCONSOLE-env-EXECUTE: 
   sleep 1
   read execute
   input=$execute
@@ -21,13 +22,16 @@ then
   if [ $doap -eq 1 ]
   then
     echo $line
+    
   fi
   
   if [$line -eq "OUTPUT"]
   then
     doap=1
+    
   fi
   
   
 done < "$input"
+
 fi
