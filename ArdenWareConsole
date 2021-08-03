@@ -1,0 +1,20 @@
+echo AWCONSOLE~env~>| 
+read c
+	
+if [ $c -ef "OUTPUT" ] 
+do
+echo AWCONSOLE~env~>|OUTPUT~>| 
+read print
+echo $print
+fi
+
+if [ $c -ef "EXECUTE" ] 
+do
+echo AWCONSOLE~env~>|EXECUTE~>| 
+read execute
+input=$execute
+while IFS= read -r line
+do
+  edit
+done < "$input"
+fi
