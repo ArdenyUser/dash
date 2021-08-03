@@ -1,28 +1,30 @@
-echo AWCONSOLE~env~>| 
+echo AWCONSOLE~env~>  
 read c
 	
 if [ $c -eq "OUTPUT" ] 
-do
-  echo AWCONSOLE~env~>|OUTPUT~>| 
+then
+  sleep 1
+  echo AWCONSOLE~env~>OUTPUT~>  
   read print
   echo $print
 fi
 
 if [ $c -eq "EXECUTE" ] 
-do
-  echo AWCONSOLE~env~>|EXECUTE~>| 
+then
+  echo AWCONSOLE~env~>EXECUTE~> 
+  sleep 1
   read execute
   input=$execute
 while IFS= read -r line
-do
+then
 
   if [ $doap -eq 1 ]
-  do
+  then
     echo $line
   fi
   
   if [$line -eq "OUTPUT"]
-  do
+  then
     doap=1
   fi
   
