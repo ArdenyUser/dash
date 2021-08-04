@@ -1,37 +1,24 @@
+#!/bin/sh
+
 echo AWCONSOLE-env: 
 read c
 	
 if [ $c -eq "OUTPUT" ] 
 then
   sleep 1
-  echo AWCONSOLE-env-:OUTPUT:
+  echo AWCONSOLE-env-:OUTPUT: 
   read print
   echo $print
   
 fi
 
 if [ $c -eq "EXECUTE" ] 
-then
-  echo AWCONSOLE-env-EXECUTE: 
-  sleep 1
-  read execute
-  input=$execute
-while IFS= read -r line
-then
-
-  if [ $doap -eq 1 ]
-  then
-    echo $line
-    
-  fi
-  
-  if [$line -eq "OUTPUT"]
-  then
-    doap=1
-    
-  fi
-  
-  
-done < "$input"
+do
+  read file
+  while [ $c -eq "OUTPUT" ]
+  do
+     echo $a
+     a=`expr $a + 1`
+  done
 
 fi
