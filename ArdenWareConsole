@@ -15,10 +15,9 @@ fi
 if [ $c -eq "EXECUTE" ] 
 do
   read file
-  while [ $c -eq "OUTPUT" ]
-  do
-     echo $a
-     a=`expr $a + 1`
-  done
+  while IFS= read -r line; do
+  EDIT EXECUTER
+  done < $file
+  
 
 fi
