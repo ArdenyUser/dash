@@ -4,7 +4,7 @@ echo AWCONSOLE-env:
 read c
 	
 if [ $c -eq "OUTPUT" ] 
-then
+do
   sleep 1
   echo AWCONSOLE-env-:OUTPUT: 
   read print
